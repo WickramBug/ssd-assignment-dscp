@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Double Submit Cookie Token - Dashboard</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
 <body>
     
@@ -17,7 +17,7 @@
 
 <h1 class="form-title">Double Submit Cookie Pattern Sample</h1>
 <div class="form-class">
-    <form action="token.php" method="POST">
+    <form action="../Server/token.php" method="POST">
         <input type="hidden" id="token" name="token" value="token">
         <input type="text" id="tokenEdit" name="editedToken" value="editedToken" onChange="tokenEditor();">
         <button type="button" id="assignToken" onClick="tokenEditor();">Change the Token</button>

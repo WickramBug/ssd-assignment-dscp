@@ -10,11 +10,11 @@
             session_regenerate_id();
             setcookie("csrf_session",session_id());
 
-            include("token.php");
+            include("./Server/token.php");
             $token=randomTokenGenerator(session_id());
 
             setcookie("csrf_token",$token);
-            header('location: ./home.php');
+            header('location: ./Public/home.php');
         }
     }
     
@@ -29,7 +29,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Double Submit Cookie Token - Home</title>
 
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
     
 </head>
 

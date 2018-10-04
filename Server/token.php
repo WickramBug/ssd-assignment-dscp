@@ -18,27 +18,23 @@
         return $randString;
     }
 
-    function logout() {
+    if(isset($_POST['submitCsrf'])){
+
+        if($_COOKIE["csrf_token"] == $_POST['token']){
+            header("location: ../Public/success.php");
+        }
+        else{
+            header("location: ../Public/error.php");
+        }
+    }
+
+    if(isset($_POST['logout'])){
         unset($_COOKIE['csrf_session']);
         setcookie('csrf_session', null, -1, '/');
         unset($_COOKIE['csrf_token']);
         setcookie('csrf_token', null, -1, '/');
         unset($_SESSION);
         header("location: /");
-    }
-
-    if(isset($_POST['submitCsrf'])){
-
-        if($_COOKIE["csrf_token"] == $_POST['token']){
-            header("location: /success.php");
-        }
-        else{
-            header("location: /error.php");
-        }
-    }
-
-    if(isset($_POST['logout'])){
-        logout();
     }
 
 ?>
