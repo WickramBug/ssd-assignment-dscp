@@ -1,1 +1,1 @@
-"# CSRF-Double-Submit-Cookies-Pattern" 
+CSRF Double Submitn Cookies Pattern example using PHP
